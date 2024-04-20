@@ -39,7 +39,7 @@ class Cliente extends \yii\db\ActiveRecord
             [['nombre', 'email', 'idSexo'], 'required'],
             [['fecha_nacimiento', 'created_at', 'updated_at'], 'safe'],
             [['idSexo'], 'integer'],
-            [['nombre', 'apellido', 'email', 'direccion'], 'string', 'max' => 255],
+            [['nombre', 'apellido', 'email', 'direccion'], 'string', 'max' => 180],
             [['telefono'], 'string', 'max' => 20],
             [['email'], 'unique'],
             [['idSexo'], 'exist', 'skipOnError' => true, 'targetClass' => Sexo::class, 'targetAttribute' => ['idSexo' => 'id']],

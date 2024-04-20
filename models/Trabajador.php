@@ -33,7 +33,7 @@ class Trabajador extends \yii\db\ActiveRecord
         return [
             [['nombre', 'documento_identidad', 'cargo', 'idsede'], 'required'],
             [['idsede'], 'integer'],
-            [['nombre', 'documento_identidad', 'cargo'], 'string', 'max' => 255],
+            [['nombre', 'documento_identidad', 'cargo'], 'string', 'max' => 180],
             [['idsede'], 'exist', 'skipOnError' => true, 'targetClass' => Sede::class, 'targetAttribute' => ['idsede' => 'id']],
         ];
     }

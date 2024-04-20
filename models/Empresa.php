@@ -32,7 +32,7 @@ class Empresa extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'ruc', 'razon_social', 'direccion'], 'required'],
-            [['nombre', 'ruc', 'razon_social', 'direccion'], 'string', 'max' => 255],
+            [['nombre', 'ruc', 'razon_social', 'direccion'], 'string', 'max' => 180],
         ];
     }
 

@@ -1,22 +1,12 @@
 <?php
 
-namespace app\Controllers;
-use Yii;
-
+namespace app\controllers;
 
 use app\models\Empresa;
 use app\models\EmpresaSearch;
 use yii\web\Controller;
-use yii\web\Response;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
-
-
-
-
-
-
 
 /**
  * EmpresaController implements the CRUD actions for Empresa model.

@@ -2,16 +2,16 @@
 
 namespace app\Controllers;
 
-use app\models\Sede;
-use app\models\SedeSearch;
+use app\models\Sexo;
+use app\models\SexoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SedeController implements the CRUD actions for Sede model.
+ * SexoController implements the CRUD actions for Sexo model.
  */
-class SedeController extends Controller
+class SexoController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class SedeController extends Controller
     }
 
     /**
-     * Lists all Sede models.
+     * Lists all Sexo models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new SedeSearch();
+        $searchModel = new SexoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class SedeController extends Controller
     }
 
     /**
-     * Displays a single Sede model.
+     * Displays a single Sexo model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class SedeController extends Controller
     }
 
     /**
-     * Creates a new Sede model.
+     * Creates a new Sexo model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Sede();
+        $model = new Sexo();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +83,7 @@ class SedeController extends Controller
     }
 
     /**
-     * Updates an existing Sede model.
+     * Updates an existing Sexo model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -103,7 +103,7 @@ class SedeController extends Controller
     }
 
     /**
-     * Deletes an existing Sede model.
+     * Deletes an existing Sexo model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -117,15 +117,15 @@ class SedeController extends Controller
     }
 
     /**
-     * Finds the Sede model based on its primary key value.
+     * Finds the Sexo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Sede the loaded model
+     * @return Sexo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Sede::findOne(['id' => $id])) !== null) {
+        if (($model = Sexo::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

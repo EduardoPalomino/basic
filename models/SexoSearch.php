@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Sede;
+use app\models\Sexo;
 
 /**
- * SedeSearch represents the model behind the search form of `app\models\Sede`.
+ * SexoSearch represents the model behind the search form of `app\models\Sexo`.
  */
-class SedeSearch extends Sede
+class SexoSearch extends Sexo
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class SedeSearch extends Sede
     public function rules()
     {
         return [
-            [['id', 'idempresa'], 'integer'],
-            [['nombre', 'direccion'], 'safe'],
+            [['id'], 'integer'],
+            [['nombre'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class SedeSearch extends Sede
      */
     public function search($params)
     {
-        $query = Sede::find();
+        $query = Sexo::find();
 
         // add conditions that should always apply here
 
@@ -59,11 +59,9 @@ class SedeSearch extends Sede
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'idempresa' => $this->idempresa,
         ]);
 
-        $query->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'direccion', $this->direccion]);
+        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

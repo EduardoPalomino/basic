@@ -33,7 +33,7 @@ class Sede extends \yii\db\ActiveRecord
         return [
             [['nombre', 'direccion', 'idempresa'], 'required'],
             [['idempresa'], 'integer'],
-            [['nombre', 'direccion'], 'string', 'max' => 255],
+            [['nombre', 'direccion'], 'string', 'max' => 180],
             [['idempresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::class, 'targetAttribute' => ['idempresa' => 'id']],
         ];
     }
